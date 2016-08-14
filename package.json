@@ -1,0 +1,24 @@
+{
+  "name": "dete.js",
+  "version": "1.0.0",
+  "description": "A small library to detect files using the file command.",
+  "main": "dete.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypsurus/dete.js.git"
+  },
+  "keywords": [
+    "detect",
+    "file",
+    "upload"
+  ],
+  "author": "Hypsurus <hypsurus@mail.ru>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hypsurus/dete.js/issues"
+  },
+  "homepage": "https://github.com/hypsurus/dete.js#readme"
+}
