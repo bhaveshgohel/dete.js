@@ -4,7 +4,7 @@ dete.js - library to detect files.
 Why?
 -----
 
-Let's say you build a website and you want to verify the user uploaded profile picture and not binary file!.
+Let's say you build a website and you want to verify the user uploaded profile picture and not a python script!.
 
 How do you verify it?
 
