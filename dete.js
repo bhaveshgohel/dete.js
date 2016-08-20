@@ -24,7 +24,13 @@ const process = require('process');
 const exec = require('child_process').execSync
 
 function Dete(file) {
+  
   this.file = file;
+ 
+  if ( this.checkFileName(this.file) == false ) {
+    throw "Invalid file name";
+  }
+
   this.mimeType = this.get(`file --mime-type ${this.file}`)
   this.fileEncoding = this.get(`file --mime-encoding ${this.file}`)
   this.fileInfo = this.getInfo(`file ${this.file}`)
@@ -32,10 +38,9 @@ function Dete(file) {
 
   /* In case the file not found. */
   if ( this.mimeType == "cannot" ) {
-    throw " No such file."
+    throw "No such file."
   }
 }
-
 /* get: return output of command and split the output.
     @command the command to execute.
 */
@@ -90,6 +95,13 @@ Dete.prototype.test = function test() {
   } catch(err) {
     throw "No file command"
   }
+}
+
+/* checkFileName: Will check the file name. 
+   @filename 
+*/
+Dete.prototype.checkFileName = function checkFileName(filename) {
+ return !/[~`!#$%\^&*+=\-\[\]\\';,{}|\\":<>\?]/g.test(filename);
 }
 
 module.exports = Dete;
