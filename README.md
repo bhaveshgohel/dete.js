@@ -1,4 +1,4 @@
-dete.js - library to detect files.
+dete.js - library to detect files type and encoding.
 -------------------------------------
 
 Why?
@@ -25,9 +25,10 @@ const Dete = require('dete.js');
 var d = new Dete('/home/user/Profile_picture.jpg');
 
 if ( d.isPicture == false ) {
+  console.log(d.mimeType);
+  console.log(d.fileEncoding);
   console.log("This is not a picture file!, please try to upload picture file.!");
  }
-}
 ```
 
 API Functions
