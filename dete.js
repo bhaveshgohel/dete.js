@@ -28,7 +28,7 @@ function Dete(file) {
   this.file = file;
  
   if ( this.checkFileName(this.file) == false ) {
-    throw "Invalid file name";
+    throw new Error("Invalid file name");
   }
 
   this.mimeType = this.get(`file --mime-type ${this.file}`)
@@ -38,7 +38,7 @@ function Dete(file) {
 
   /* In case the file not found. */
   if ( this.mimeType == "cannot" ) {
-    throw "No such file."
+    throw new Error("No such file.")
   }
 }
 /* get: return output of command and split the output.
@@ -93,7 +93,7 @@ Dete.prototype.test = function test() {
   try {
      fs.statSync("/bin/file");
   } catch(err) {
-    throw "No file command"
+    throw new Error("No file command")
   }
 }
 
